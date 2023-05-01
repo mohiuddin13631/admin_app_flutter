@@ -146,7 +146,7 @@ class _LoginPageState extends State<LoginPage> {
       if(response.statusCode == 200){
         showToastMessage("Login successful");
         SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-        sharedPreferences.setString("token", data['access_token']);
+        sharedPreferences.setString("token", data['access_token']); //todo: most important
         Navigator.push(context, MaterialPageRoute(builder: (context) => NavBarPage(),));
       }
       else{

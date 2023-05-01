@@ -43,6 +43,7 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(icon: Icon(Icons.person),label: "Profile"),
         ],
       ),
+      body: pages[currentIndex],
     );
   }
 }
