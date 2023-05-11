@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:admin_app_flutter/controller/custom_http_request.dart';
 import 'package:admin_app_flutter/controller/provider/category_provider.dart';
+import 'package:admin_app_flutter/screen/add_category_page.dart';
 import 'package:admin_app_flutter/widget/custom_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -36,6 +37,11 @@ class _CategoryPageState extends State<CategoryPage> {
   Widget build(BuildContext context) {
     var category = Provider.of<CategoryProvider>(context); //everything in category provider stored in category variable
     return Scaffold(
+      floatingActionButton:FloatingActionButton(onPressed: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => AddCategoryPage(),));
+      },
+      child: Icon(Icons.add),
+      ),
       body: Consumer<CategoryProvider>(builder: (context, value, child) {
         return SafeArea(
             child: value.categoryList.isNotEmpty? ListView.builder(

@@ -9,6 +9,8 @@ import 'package:http/http.dart' as http;
 
 
 class CustomHttpRequest{
+
+
   static Future<Map<String,String>> getHeaderWithToken() async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     var token = sharedPreferences.getString('token');
@@ -18,6 +20,8 @@ class CustomHttpRequest{
     };
     return header;
   }
+
+  //---------------------------------------------
 
   static Future<dynamic> fetchCategoryData() async{
     List<CategoryModel> categoryList = [];
