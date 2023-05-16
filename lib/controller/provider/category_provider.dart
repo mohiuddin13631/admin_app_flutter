@@ -1,3 +1,5 @@
+
+
 import 'package:admin_app_flutter/controller/custom_http_request.dart';
 import 'package:flutter/foundation.dart';
 
@@ -12,4 +14,5 @@ class CategoryProvider with ChangeNotifier {
     categoryList = await CustomHttpRequest.fetchCategoryData();
     notifyListeners();
   }
+
 }
